@@ -1,12 +1,5 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
-
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+PROJECT TITLE: Salvaging Space Derelicts
+PURPOSE OF PROJECT: Turn based adventure game. (Learning Object Orientated Programming in Java).
+VERSION or DATE: v3.0 (BlueJ 5.0.2)
+AUTHORS: Gervais Pierre
+USER INSTRUCTIONS: None Yet (well there will be a help command.)
