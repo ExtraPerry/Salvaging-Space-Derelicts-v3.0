@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\r\n\ [Item\ Class].\r\n\ This\ class\ defines\ what\ an\ item\ is\ inside\ of\ the\ game.\ Each\ object\ created\ from\ this\ class\ will\ be\ its\ own\ individual\ existance.\r\n\ However\ two\ items\ with\ the\ same\ name\ should\ not\ be\ created\ for\ it\ could\ cause\ some\ complications,\ since\ the\ player\ will\ refer\ to\ all\ items\ by\ their\ names.\r\n\ \r\n\ @author\ Gervais\ Pierre\r\n\ @version\ v3.0\r\n
+comment1.params=pName\ pPrice\ pVolume\ pDescription
+comment1.target=Item(java.lang.String,\ int,\ int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ used\ to\ create\ an\ instance\ (object)\ of\ an\ item.\r\n\ @param\ String\ Name\ \:\ Name\ that\ the\ item\ will\ have.\r\n\ @param\ int\ Price\ \:\ Price\ that\ the\ item\ will\ have.\r\n\ @param\ int\ Volume\ \:\ Amount\ of\ volume\ the\ item\ will\ have.\r\n\ @param\ String\ Description\ \:\ A\ short\ description\ for\ the\ item\ to\ help\ understand\ what\ it\ is\ or\ it's\ potential\ use.\r\n
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment2.text=\r\n\ Fetches\ the\ name\ of\ the\ item.\r\n\ @return\ String\ Name\ \:\ The\ name\ by\ which\ the\ item\ is\ called\ and\ refered\ to.\r\n
+comment3.params=
+comment3.target=int\ getPrice()
+comment3.text=\r\n\ Fetches\ the\ price\ of\ the\ item.\r\n\ @return\ int\ Price\ \:\ The\ value\ of\ the\ item\ that\ will\ be\ defined\ in\ credits.\r\n
+comment4.params=
+comment4.target=int\ getVolume()
+comment4.text=\r\n\ Fetches\ the\ volume\ of\ the\ item.\r\n\ @return\ int\ Volume\ \:\ The\ amount\ of\ space\ defined\ in\ Liters\ [L]\ that\ the\ item\ will\ take\ up\ in\ the\ inventory.\ (Note\ \:\ Not\ all\ inventories\ have\ limited\ Space).\r\n
+comment5.params=
+comment5.target=java.lang.String\ getDescription()
+comment5.text=\r\n\ Fetches\ the\ description\ of\ the\ item.\r\n\ @return\ String\ Description\ \:\ A\ short\ peice\ of\ text\ used\ to\ describe\ the\ item\ and\ its\ potential\ uses.\r\n
+comment6.params=
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Used\ to\ produce\ a\ String\ in\ which\ all\ information\ of\ the\ item\ will\ be\ displayed\ on.\r\n\ @return\ String\ LongDescription\ \:\ A\ peice\ of\ text\ used\ to\ describe\ all\ aspects\ of\ the\ item.\ This\ will\ include\ its\ Description,\ Price\ and\ Volume.\r\n
+numComments=7
