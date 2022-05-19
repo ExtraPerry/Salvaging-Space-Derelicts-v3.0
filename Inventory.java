@@ -14,16 +14,19 @@ public class Inventory
     private ArrayList<Item> aItemList;  //List of all items inside of the inventory.
     private int aTotalPrice;            //Total price of all items inside of the inventory.
     private int aTotalVolume;           //Total volume of all items inside of the inventory.
+    private int aMaxVolume;             //Max volume the inventory can hold.
     
     
     //Constructors
     /**
      * Constructor used to create an instance (object) of an inventory.
+     * @param int MaxVolume : Volume limit for the inventory.
      */
-    public Inventory(){
+    public Inventory(final int pMaxVolume){
         this.aItemList = new ArrayList<Item>();
         this.setTotalPrice(0);
         this.setTotalVolume(0);
+        this.setMaxVolume(pMaxVolume);
     }   //Inventory()
     
     //Set Functions
@@ -43,6 +46,13 @@ public class Inventory
         this.aTotalVolume = pTotalVolume;
     }   //setTotalVolume()
     
+    /**
+     * Private functions used to change the inventory's max volume.
+     * @param int MaxVolume : Volume limit for the inventory.
+     */
+    private void setMaxVolume(final int pMaxVolume){
+        this.aMaxVolume = pMaxVolume;
+    }   //setMaxVolume()
     
     //Get Functions
     /**
@@ -75,35 +85,59 @@ public class Inventory
         return this.aTotalVolume;
     }   //getTotalVolume()
     
+    /**
+     * Fetches the max volume of all items currently stored inside of the inventory.
+     * @return Int MaxVolume : Volume limit of the inventory.
+     */
+    private int getMaxVolume(){
+        return this.aMaxVolume;
+    }   //getMaxVolume()
+    
     
     //Custom Functions
     /**
      * Used to check if an item is inside the inventory by name.
      * @return boolean : True if the item is inside of the inventory. False if the item is not inside of the inventory.
      */
-    public boolean hasItem(final String pItemName){
+    private boolean hasItem(final String pItemName){
         return this.getItem(pItemName) != null;
     }   //hasItem()
     
     /**
+     * Used to check if an item can fit inside the inventory.
+     * @return boolean : True if the item can fit inside the inventory. False if the item cannot fit inside the inventory.
+     */
+    private boolean hasEnoughSpace(final Item pItem){
+        return this.getMaxVolume() >= this.getTotalVolume() + pItem.getVolume();
+    }
+    
+    /**
      * Used to add an item to the inventory. (Note : will also update total price and volume).
      * @param Item Item : Item that should be added to the inventory.
+     * @throw InventorySizeExceededException : Thrown if item cannot fit inside the inventory.
      */
-    public void addItem(final Item pItem){
-        this.aItemList.add(pItem);
-        this.setTotalPrice(this.getTotalPrice() + pItem.getPrice());
-        this.setTotalVolume(this.getTotalVolume() + pItem.getVolume());
+    public void addItem(final Item pItem) throws InventorySizeExceededException{
+        if(this.hasEnoughSpace(pItem)){
+            this.aItemList.add(pItem);
+            this.setTotalPrice(this.getTotalPrice() + pItem.getPrice());
+            this.setTotalVolume(this.getTotalVolume() + pItem.getVolume());
+        }else{
+            throw new InventorySizeExceededException("Not enough space in Inventory to add stated Item : " + pItem.getName() + ".");
+        }
     }   //addItem()
     
     /**
      * Used to remove an item from the inventory. (Note : will also update total price and volume).
      * @param Item Item : Item that should be removed from the inventory.
+     * @throw InventoryItemDoesNotExistException : Thrown if item does not exist inside inventory and thus cannot be removed.
      */
-    public void removeItem(final Item pItem){
+    public void removeItem(final Item pItem) throws InventoryItemDoesNotExistException{
         if(this.hasItem(pItem.getName())){
             this.setTotalPrice(this.getTotalPrice() - pItem.getPrice());
             this.setTotalVolume(this.getTotalVolume() - pItem.getVolume());
             this.aItemList.remove(pItem);
+        }else{
+            throw new InventoryItemDoesNotExistException("Stated Item : \"" + pItem.getName() + "\" does not exist inside inventory. Thus cannot be removed.");
         }
     }   //removeItem()
     
@@ -139,7 +173,7 @@ public class Inventory
         if (vTotalPrice != 1){
             vOutput += "s";
         }
-        vOutput += "." + "\n" + "Total Volume : " + this.getTotalVolume() + " L." + "\n";
+        vOutput += "." + "\n" + "Total Volume : " + this.getTotalVolume() + " L." + "\n" + "Max Volume : " + this.getMaxVolume() + "\n";
         if (this.aItemList.size() > 1){
             vOutput += "Item : " +  this.getInventoryItemList().substring(2) + ".";
         }else{
