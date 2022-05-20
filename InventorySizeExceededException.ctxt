@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=InventorySizeExceededException
-comment0.text=\r\n\ This\ is\ an\ Exception\ class\ but\ with\ a\ Custom\ Name.\r\n\ It\ is\ related\ to\ when\ the\ user\ adds\ an\ item\ to\ an\ inventory\ but\ there\ is\ no\ more\ space\ available.\r\n
+comment0.text=\r\n\ This\ is\ an\ Exception\ class\ but\ with\ a\ Custom\ Name.\r\n\ It\ is\ related\ to\ when\ the\ user\ adds\ an\ item\ to\ an\ inventory\ but\ there\ is\ no\ more\ space\ available.\r\n\ \r\n\ @author\ Gervais\ Pierre\r\n\ @version\ v3.0\r\n
 comment1.params=pErrorMessage
 comment1.target=InventorySizeExceededException(java.lang.String)
 numComments=2

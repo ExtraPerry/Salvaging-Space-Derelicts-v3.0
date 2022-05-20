@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=InventoryItemDoesNotExistException
-comment0.text=\r\n\ This\ is\ an\ Exception\ class\ but\ with\ a\ Custom\ Name.\r\n\ It\ is\ related\ to\ when\ the\ user\ removes\ an\ item\ from\ an\ inventory\ but\ the\ item\ does\ not\ exist\ inside\ the\ inventory.\r\n
+comment0.text=\r\n\ This\ is\ an\ Exception\ class\ but\ with\ a\ Custom\ Name.\r\n\ It\ is\ related\ to\ when\ the\ user\ removes\ an\ item\ from\ an\ inventory\ but\ the\ item\ does\ not\ exist\ inside\ the\ inventory.\r\n\ \r\n\ @author\ Gervais\ Pierre\r\n\ @version\ v3.0\r\n
 comment1.params=pErrorMessage
 comment1.target=InventoryItemDoesNotExistException(java.lang.String)
 numComments=2
